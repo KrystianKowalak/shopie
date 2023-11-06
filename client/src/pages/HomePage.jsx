@@ -2,13 +2,14 @@ import { useEffect } from "react";
 import { useGlobalState } from "../utils/GlobalState";
 import { useQuery } from "@apollo/client";
 import { QUERY_PRODUCTS } from "../utils/queries";
-
+import Modal from "../components/Modal";
 import Marquee from "../components/Marquee";
 import CategoryBubbles from "../components/CategoryBubbles";
 import CategoryFilter from "../components/CategoryFilter";
 import ProductSection from "../components/ProductSection";
 
 import BG from "../assets/images/SMILEY-BG.png"
+
 
 const HomePage = () => {
     const [state, dispatch] = useGlobalState();
@@ -28,7 +29,9 @@ const HomePage = () => {
             <div className="marqueeBox">
                 <Marquee />
             </div>
+           
             <CategoryBubbles />
+            <Modal />
 
             <div className="relative">
                 <div
