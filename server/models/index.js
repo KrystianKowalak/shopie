@@ -1,5 +1,5 @@
 const Category = require("./Category");
 const Product = require("./Product");
-const User = require("./users");
+const User = require("./User");
 
 module.exports = { Category, Product, User };

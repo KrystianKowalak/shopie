@@ -4,7 +4,8 @@ const styles = {
     header: {
 
     }
-  };
+};
+
 const Header = () => {
     return (
         <header style={ styles.header }>

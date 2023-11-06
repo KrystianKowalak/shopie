@@ -31,92 +31,30 @@ const resolvers = {
         },
     },
 
-    Mutation: {
-        // User mutations
-        createUser: async (parent, { username, email, password }) => {
-            const user = await User.create({ username, email, password });
-            const token = signToken(user);
+  Mutation: {
+    createUser: async (parent, { username, email, password }) => {
+      const user = await User.create({ username, email, password });
+      const token = signToken(user);
 
-            return { token, user };
-        },
-        login: async (parent, { email, password }) => {
-            const user = await User.findOne({ email });
-
-            if (!user) {
-                throw AuthenticationError;
-            }
-
-            const correctPw = await user.isCorrectPassword(password);
-
-            if (!correctPw) {
-                throw AuthenticationError;
-            }
-
-            const token = signToken(user);
-            return { token, user };
-        },
-        // Category mutations
-        createCategory: async (parent, { categoryName }) => {
-            return Category.create({ categoryName });
-        },
-        updateCategory: async (parent, { categoryId, categoryName }) => {
-            return Category.findOneAndUpdate(
-                { _id: categoryId },
-                { categoryName },
-                { new: true }
-            );
-        },
-        deleteCategory: async (parent, { categoryId }) => {
-            return Category.findOneAndDelete({ _id: categoryId });
-        },
-        // Product mutations
-        createProduct: async (
-            parent,
-            {
-                productName,
-                productDescription,
-                productPrice,
-                productCategory,
-                onSale,
-                saleFactor,
-                imageSrc,
-            }
-        ) => {
-            return Product.create({
-                productName,
-                productDescription,
-                productPrice,
-                productCategory,
-                onSale,
-                saleFactor,
-                imageSrc,
-            });
-        },
-        updateProduct: async (
-            parent,
-            {
-                productId,
-                productName,
-                productDescription,
-                productPrice,
-                productCategory,
-            }
-        ) => {
-            return Product.findOneAndUpdate(
-                { _id: productId },
-                {
-                    productName,
-                    productDescription,
-                    productPrice,
-                    productCategory,
-                },
-                { new: true }
-            );
-        },
-        deleteProduct: async (parent, { productId }) => {
-            return Product.findOneAndDelete({ _id: productId });
-        },
+      return { token, user };
     },
+    login: async (parent, { email, password }) => {
+      const user = await User.findOne({ email });
+
+      if (!user) {
+        throw AuthenticationError;
+      }
+
+      const correctPw = await user.isCorrectPassword(password);
+
+      if (!correctPw) {
+        throw AuthenticationError;
+      }
+
+      const token = signToken(user);
+      return { token, user };
+    }
+  },
 };
 
 module.exports = resolvers;

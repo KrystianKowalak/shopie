@@ -36,6 +36,7 @@ async function seed() {
                             onSale: Math.random() < 0.5,
                             saleFactor: Math.floor(Math.random() * 100) / 100,
                             imageSrc: file,
+                            quantity: Math.floor(Math.random() * 21),
                         });
                         console.log(`added product ${file}`);
                     });

@@ -20,6 +20,8 @@ const typeDefs = `
     salePrice: Float
     imageSrc: String
     imagePath: String
+    quantity: Int
+    inStock: Boolean
   }
 
   type Auth {
