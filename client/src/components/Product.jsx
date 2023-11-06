@@ -3,7 +3,7 @@ import Auth from "../utils/auth";
 import { useState } from 'react'
 import { Link } from "react-router-dom";
 import { Modal } from "flowbite-react";
-import { XMarkIcon } from '@heroicons/react/24/outline'
+import { XMarkIcon, ShoppingBagIcon } from '@heroicons/react/24/outline'
 const Product = (product) => {
   const [state, dispatch] = useGlobalState();
   console.log(state);
@@ -39,10 +39,11 @@ const Product = (product) => {
             </li>
 
            
-                <button type="button" className="text-white #D1D5DB hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                  <svg className="w-3.5 h-3.5 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="contentfill" viewBox="0 0 18 21">
+                <button type="button" className="text-black #D1D5DB hover:bg-blue-200 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-400 dark:hover:bg-blue-500 dark:focus:ring-blue-300">
+                <ShoppingBagIcon className=" w-4 cursor-pointer text-gray hover:scale-110 ease-in duration-300" />
+                  {/* <svg className="w-3.5 h-3.5 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="contentfill" viewBox="0 0 18 21"> */}
                     <path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z" />
-                  </svg>
+                  {/* </svg> */}
                 </button>
               
             
@@ -75,8 +76,6 @@ const Product = (product) => {
                   src={imagePath}
                   className=" w-40 object-cover object-center" />
                 
-
-
                 
                   <div className="flow-root">
                     <ul role="list" className="-my-6 divide-y divide-gray-200">
@@ -105,18 +104,12 @@ const Product = (product) => {
                                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi exercitationem quisquam eveniet eligendi rerum quod aliquam possimus. 
                                 </li>
                               </ul>
-                              
+
                             </div>
-                            {/* <p className="mt-1 text-sm text-gray-500">{product.color}</p> */}
                           </div>
                           <div className="flex flex-1 items-end justify-between text-sm">
                             <div className="flex">
-                              {/* <button
-                            type="button"
-                            className="font-medium text-indigo-600 hover:text-indigo-500"
-                        >
-                            Remove
-                        </button> */}
+                        
                             </div>
                           </div>
                         </div>
@@ -145,8 +138,6 @@ const Product = (product) => {
       </Modal>
 
     </div>
-
-
 
   )
 }
