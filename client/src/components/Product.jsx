@@ -21,7 +21,7 @@ const Product = (product) => {
         <div>
              <productModal product={product}/>
             {state.products.length != 0 ? (
-                <div className="border-1 rounded-lg shadow-gray-400 shadow-xl flex-col cursor-pointer m-10 hover:scale-110 ease-in duration-300">
+                <div className="border-1 rounded-md shadow-gray-400 shadow-xl flex-col cursor-pointer m-10 hover:scale-110 ease-in duration-300">
                     <img className="rounded-t-lg" src={imagePath} />
                     <ul >
                         <li >
@@ -32,7 +32,7 @@ const Product = (product) => {
                         <li>
                             $ {productPrice}
                         </li>
-                        <button onClick={() => setOpenModal(true) } className="">
+                        <button onClick={() => setOpenModal(true) } className="text-sm flex justify-normal">
                             Show Product
 
                         </button>
@@ -46,7 +46,6 @@ const Product = (product) => {
                             </>
                         ) : (
                             <p>Login to shop</p>
-
                         )}
                     </ul>
                 </div>
@@ -64,15 +63,15 @@ const Product = (product) => {
             <div className="flex items-start justify-between">
                 <img
                     src={imagePath}
-                    className="h-full w-full object-cover object-center" />
-                <div className="ml-3 flex h-7 items-center">
+                    className="h-70 w-70 object-cover object-center" />
+                <div className="ml-3 flex h-5 items-center">
                     <button
                         type="button"
-                        className="relative -m-2 p-2 text-gray-400 hover:text-gray-500"
+                        className="absolute mr-3 text-gray-400 hover:text-gray-500"
                         onClick={() => setOpenModal(false)}>
-                        <span className="absolute -inset-0.5" />
+                        <span className="relative -inset-.25" />
                         <span className="sr-only">Close panel</span>
-                        <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                        <XMarkIcon className="h-4 w-4 float-left" aria-hidden="true" />
                     </button>
                 </div>
             </div>
@@ -81,16 +80,16 @@ const Product = (product) => {
                     <ul role="list" className="-my-6 divide-y divide-gray-200">
                         {/* {products.map((product) => ( */}
                         <li key={product.id} className="flex py-6">
-                            <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                            </div>
+
                             <div className="ml-4 flex flex-1 flex-col">
                                 <div>
-                                    <div className="flex justify-between text-base font-medium text-gray-900">
-                                        <h3>
-                                            <a>
-                                                {productName}</a>
+                                    <div className="flex justify-around text-base font-medium text-gray-900">
+                                        <h3 >
+                                            <p>${productPrice}</p>
+                                       
                                         </h3>
-                                        <p className="ml-4">{productPrice}</p>
+                                        <a>
+                                          {productName}</a>
                                     </div>
                                     <p className="mt-1 text-sm text-gray-500">{product.color}</p>
                                 </div>
