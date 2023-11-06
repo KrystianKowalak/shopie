@@ -1,17 +1,17 @@
   import React from 'react';
   import { useState, useEffect } from 'react';
 
-  const style = {
-    borderStyle: "solid",
-    borderWidth: "5px",
-    float: "left",
-    width: "400px",
-    height: "650px",
-    marginLeft: ".5em",
-    marginTop: "1em",
-  };
-
+  
   function CategoryFilter() {
+    const style = {
+      borderStyle: "solid",
+      borderWidth: "5px",
+      float: "left",
+      width: "400px",
+      height: "650px",
+      marginLeft: ".5em",
+      marginTop: "1em",
+    };
     
     const [checkboxes, setCheckboxes] = useState({
       Candy: false,
@@ -29,17 +29,17 @@
       });
     };
 
-    useEffect(() => {
+    // useEffect(() => {
     
-      // bring in data here
+    //   // bring in data here
 
-      const filteredData = data.filter((item) => checkboxes[item.category]);
+    //   const filteredData = data.filter((item) => checkboxes[item.category]);
 
-      console.log(filteredData);
-    }, [checkboxes]);
+    //   console.log(filteredData);
+    // }, [checkboxes]);
     
     return (
-      <div className="filterContainer">
+      <div className="filterContainer" style={style} >
         <label>
           Candy
           <input
