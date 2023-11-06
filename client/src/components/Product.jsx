@@ -27,6 +27,9 @@ const Product = (product) => {
           <img onClick={() => setOpenModal(true)} className="rounded-t-lg" src={imagePath} />
           <ul >
             <li >
+              {categoryName}
+            </li>
+            <li >
               {productName}
             </li>
           </ul>
